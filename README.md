@@ -1,1 +1,2 @@
 # System-Design-LLD-Low-Level-Design-Concepts
+System-Design-LLD-Low-Level-Design-Concepts is a comprehensive repository focused on low-level design (LLD) principles and system design concepts. It provides resources, examples, and best practices for designing scalable, efficient, and maintainable systems. This repository is intended for software engineers, architects, and enthusiasts who want to strengthen their understanding of low-level design and practical system architecture.
