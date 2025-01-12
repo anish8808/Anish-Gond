@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-
+#include <iostream>
 using namespace std;
 
 class Vehicle
@@ -23,7 +23,6 @@ public:
         this->noOfTyres = _noOfTyres;
     }
 
-public:
     void start_engine()
     {
         cout << "Engine is starting" << name << " " << model << endl;
@@ -32,6 +31,11 @@ public:
     void stop_engine()
     {
         cout << "Engine is stopping " << name << " " << model << endl;
+    }
+
+    ~Vehicle()
+    {
+        cout << "I am inside Vichle Dtor" << endl;
     }
 };
 
@@ -52,6 +56,11 @@ public:
     {
         cout << "AC has started of " << name << endl;
     }
+
+    ~Car()
+    {
+        cout << "I am inside CAR dtor" << endl;
+    }
 };
 
 class MotorCycle : public Vehicle
@@ -63,8 +72,19 @@ protected:
 public:
     MotorCycle(string _name, string _model, int _noOfTyres, string _handelBarStyle, string _suspensionType) : Vehicle(_name, _model, _noOfTyres)
     {
+        cout << "I am inside MOTOR cyle Ctor" << endl;
         this->handelBarStyle = _handelBarStyle;
         this->suspensionType = _suspensionType;
+    }
+
+    void Weehlie()
+    {
+        cout << "wheelie kar rahi hai bike" << name << endl;
+    }
+
+    ~MotorCycle()
+    {
+        cout << "I am inside motor cycle dtor" << endl;
     }
 };
 
@@ -75,5 +95,10 @@ int main()
     A.start_engine();
     A.startAC();
     A.stop_engine();
+
+    MotorCycle M("BMW", "VXI", 2, "U", "engine");
+    M.start_engine();
+    M.Weehlie();
+    M.stop_engine();
     return 0;
 }
