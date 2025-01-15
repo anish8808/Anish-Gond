@@ -4,8 +4,14 @@
 // virctual keyword we will use to achive run time polymorphism
 /**
  * CONCEPT
-    * complie time ploymorphims also called early binding means compiler will run the program line by line ans bind the
+    * complie time ploymorphims also called early binding means compiler will run the program line by line and bind the
       corresponding data and func of that paritcular object at that time only
+
+    * Run time polymorphism also called late biniding and usese virtual keyword that tell complier to take the deciion
+    or method binding at run time if it is associated with virtual key ,
+
+    * we can store the chind class address using base class pointer and if we will use that and call the childclass method using
+    the base class pointer then (without virtual it will call the base one ) bt with virtaul it will call the child one
  */
 
 using namespace std;
@@ -13,7 +19,7 @@ using namespace std;
 class Shapes
 {
 public:
-    void draw()
+    virtual void draw()
     {
         cout << "Generic Drwaing " << endl;
     }
@@ -22,7 +28,7 @@ public:
 class Circle : public Shapes
 {
 public:
-    void draw()
+    void draw() override
     {
         cout << "Draw for circle" << endl;
     }
@@ -31,7 +37,7 @@ public:
 class Rect : public Shapes
 {
 public:
-    void draw()
+    void draw() override
     {
         cout << "Draw for Rectangle" << endl;
     }
@@ -39,7 +45,7 @@ public:
 
 void ShapeDrawing(Shapes *s)
 {
-    s->draw();
+    s->draw(); // this is polymorphis (as comiple time and run time it behaves differently)
 }
 
 int main()
